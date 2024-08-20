@@ -33,3 +33,9 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### Run mock server
+
+```sh
+node server.js
+```
