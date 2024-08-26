@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import Menubar from 'primevue/menubar'
-import Button from 'primevue/Button'
+import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
 import OverlayPanel from 'primevue/overlaypanel'
 

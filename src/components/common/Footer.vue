@@ -69,7 +69,7 @@ import Button from 'primevue/button'
             Join our community to get weekly updates and unique gifts every friday.
           </div>
           <InputText placeholder="Enter your email" class="w-full" />
-          <Button v-ripple label="Join" class="px-5 w-full lg:w-auto mt-3 py-3"></Button>
+          <Button label="Join" class="px-5 w-full lg:w-auto mt-3 py-3"></Button>
         </div>
         <div class="flex justify-content-end w-full mt-2">
           <div class="flex align-items-center justify-content-between">

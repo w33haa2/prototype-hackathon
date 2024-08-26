@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'Vue'
+import { onMounted } from 'vue'
 import HeadingOne from '../components/landing/HeadingOne.vue'
 import HeadingTwo from '../components/landing/HeadingTwo.vue'
 

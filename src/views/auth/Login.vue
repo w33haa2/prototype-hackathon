@@ -1,7 +1,7 @@
 <script setup>
 import InputText from 'primevue/inputtext'
 import { useRouter } from 'vue-router'
-import Button from 'primevue/Button'
+import Button from 'primevue/button'
 
 const router = useRouter()
 
