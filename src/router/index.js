@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from '@/views/auth/Login.vue'
+import Datasets from '@/views/Datasets.vue'
+import Discussions from '@/views/Discussions.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +21,22 @@ const router = createRouter({
       component: Login,
       meta: {
         layout: 'auth'
+      }
+    },
+    {
+      path: '/datasets',
+      name: 'datasets',
+      component: Datasets,
+      meta: {
+        layout: 'user'
+      }
+    },
+    {
+      path: '/discussions',
+      name: 'discussions',
+      component: Discussions,
+      meta: {
+        layout: 'user'
       }
     },
     {

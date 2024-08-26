@@ -14,6 +14,15 @@ const multer = m()
 
 const PORT = 3006
 
+// Middleware to disable CORS
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*') // Allow all origins
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS') // Allow specific HTTP methods
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization') // Allow specific headers
+  next()
+})
+
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 //serves files from the public folder
