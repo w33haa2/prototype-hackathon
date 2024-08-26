@@ -13,8 +13,8 @@ export const useDatasetStore = defineStore('dataset', () => {
     const response = await fetch(`http://localhost:3006/api/datasets?keyword=${keyword}`)
     const json = await response.json()
     console.log(json)
-    datasets.value.data = json.items
-    datasets.value.total = json.totalResults
+    datasets.value.data = json.data.items
+    datasets.value.total = json.data.totalResults
     busy.value = false
   }
 
