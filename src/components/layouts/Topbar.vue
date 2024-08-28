@@ -34,10 +34,15 @@
 
         <!-- Profile dropdown -->
         <Button class="hidden sm:block" label="Connect Wallet" rounded />
+        <Button icon="pi pi-sign-in" @click="logout" severity="info" rounded />
       </div>
     </div>
   </div>
 </template>
 <script setup>
 import Button from 'primevue/button'
+
+import { userAuthStore } from '@/stores/auth'
+
+const { logout } = userAuthStore()
 </script>

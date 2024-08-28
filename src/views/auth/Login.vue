@@ -1,12 +1,18 @@
 <script setup>
+import { ref } from 'vue'
+
 import InputText from 'primevue/inputtext'
-import { useRouter } from 'vue-router'
 import Button from 'primevue/button'
 
-const router = useRouter()
+import { userAuthStore } from '@/stores/auth'
 
-const navigateToDashboard = () => {
-  router.push('/')
+const { login } = userAuthStore()
+
+const email = ref('')
+const password = ref('')
+
+const handleLogin = () => {
+  login({ email: email.value, password: password.value })
 }
 </script>
 <template>
@@ -15,7 +21,7 @@ const navigateToDashboard = () => {
       <div
         class="flex flex-column align-items-center justify-content-center w-full md:w-4 h-full text-center py-6 px-4"
       >
-        <a @click="navigateToDashboard" class="mb-6" style="cursor: pointer">
+        <a class="mb-6" style="cursor: pointer">
           <img
             alt="logo"
             class="shadow-2"
@@ -23,11 +29,12 @@ const navigateToDashboard = () => {
             width="200"
           />
         </a>
-        <div class="flex flex-column">
-          <div class="p-input-icon-left w-full mb-3 flex flex-column align-items-start gap-2">
+        <form @submit.prevent="handleLogin" class="flex flex-column">
+          <div class="p-input-icon-left w-full mb-2 flex flex-column align-items-start gap-2">
             <span class="text-gray-700 font-medium">Email Address</span>
             <InputText
               id="email"
+              v-model="email"
               type="text"
               :pt="{
                 root: {
@@ -43,21 +50,23 @@ const navigateToDashboard = () => {
             <InputText
               id="password"
               type="password"
+              v-model="password"
               class="w-full md:w-25rem text-color-secondary surface-50 border-200 shadow-1"
               placeholder="**********"
             />
           </div>
 
           <Button
-            label="Sign Up"
+            type="submit"
+            @click="handleLogin"
+            label="Log In"
             class="p-ripple w-full mb-4"
-            @click="navigateToDashboard"
           ></Button>
           <span href="#" class="font-medium text-sm text-300 cursor-pointer">forget password?</span>
           <p class="font-medium text-400 m-0 mt-6">
             Don’t you have an account, <a href="#" class="text-primary cursor-pointer">sign up</a>
           </p>
-        </div>
+        </form>
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@ import Sidebar from '../components/layouts/Sidebar.vue'
   </main>
 </template>
 
-<style>
+<style scoped>
 body {
   background: white !important;
 }

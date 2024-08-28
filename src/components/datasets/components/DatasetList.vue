@@ -7,7 +7,6 @@
     <div class="mt-6 flex gap-[15px] flex-wrap justify-center">
       <DatasetCard v-for="(item, index) in paginatedData" :key="index" :item="item" />
     </div>
-    {{ page }}
     <Paginator v-model:first="page" :rows="10" :totalRecords="datasets.total"></Paginator>
   </div>
 </template>

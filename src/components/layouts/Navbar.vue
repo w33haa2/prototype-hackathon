@@ -81,8 +81,9 @@ const toggle = (event) => {
             type="text"
             class="sm:w-auto"
           />
-          <Button class="hidden sm:block" label="Login" rounded />
-          <Button class="hidden sm:block" label="Register" severity="contrast" rounded outlined />
+          <router-link class="hidden sm:block p-2 font-medium rounded-lg" to="/login"
+            >Login</router-link
+          >
           <div class="card flex justify-content-center">
             <Button
               type="button"
@@ -95,7 +96,12 @@ const toggle = (event) => {
             />
             <OverlayPanel ref="op">
               <div class="p-2" style="width: 110px">
-                <router-link to="/login"> Login</router-link>
+                <router-link
+                  class="p-button p-component p-button-rounded hidden sm:block"
+                  to="/login"
+                >
+                  Login</router-link
+                >
               </div>
               <div class="p-2" style="width: 110px">
                 <router-link to="/register"> Register</router-link>
